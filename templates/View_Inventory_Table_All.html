@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Inventory</title>
+    <link rel="stylesheet" href="/static/inventory.css">
+</head>
+<body>
+    <div class="container">
+        <h2>View Inventory</h2>
+        <button onclick="window.location.href='/view'">Back</button>
+        {% if data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Inventory ID</th>
+                    <th>Stock Quantity</th>
+                    <th>Reorder Level</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item['Inventory_id'] }}</td>
+                    <td>{{ item['Stock_quantity'] }}</td>
+                    <td>{{ item['Reorder_level'] }}</td>
+                    <td>{{ item['Created_at'] }}</td>
+                    <td>{{ item['Updated_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+       
+        {% if not data and request.method == 'POST' %}
+        <p>No inventory found for Product ID: {{ request.form['Product_id'] }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

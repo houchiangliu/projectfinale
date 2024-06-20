@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Additional CSS for this specific page */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Box shadow for more depth */
+            width: 360px;
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #555555;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px 0;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Home Page</h1>
+        {% if session.Manager_email %}
+            <p>Hello, {{ session.Manager_email }}! You are already logged in.</p>
+            <p><a class="btn" href="/register">Register a new manager</a></p>
+            <p><a class="btn" href="/dashboard">Add Changes</a></p>
+            <p><a class="btn" href="/view">View all Tables</a></p>
+            <p><a class="btn" href="/insights">View Insights</a></p>
+            <p><a class="btn" href="/raise_ticket">Raise a Ticket</a></p>
+            <p><a class="btn" href="/logout">Logout</a></p>
+            
+
+        {% else %}
+            <p>You are not logged in. Please <a class="btn" href="/login">Login</a> to access the homepage.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise a Ticket</title>
+    <link rel="stylesheet" href="/static/style2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Raise a Ticket</h1>
+        <form action="/submit_ticket" method="post">
+            <label for="issue">Issue:</label>
+            <textarea id="issue" name="issue" rows="4" cols="50" required></textarea>
+            <br>
+            <button type="submit">Submit Ticket</button>
+        </form>
+        <br>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+ 
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Table</title>
+    <link rel="stylesheet" href="/static/inventory.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Product Table</h2>
+        <button onclick="window.location.href='/view'">Back</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Category</th>
+                    <th>Supplier ID</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item['Product_id'] }}</td>
+                    <td>{{ item['Product_name'] }}</td>
+                    <td>{{ item['Product_category'] }}</td>
+                    <td>{{ item['Supplier_id'] }}</td>
+                    <td>{{ item['Created_at'] }}</td>
+                    <td>{{ item['Updated_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

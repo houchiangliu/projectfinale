@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for body and fonts */
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-size: 60%; /* Base font size increased to 60% */
+    overflow: auto;
+}
+
+/* Main container styling */
+.container {
+    max-width: 2000px; /* Increased max-width */
+    margin: 22px auto; /* Increased margin */
+    padding: 22px; /* Increased padding */
+    background-color: #ffffff;
+    border-radius: 8px; /* Increased border radius */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Increased shadow */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 22px; /* Increased margin */
+    font-size: 3rem; /* Increased font size */
+}
+
+h2 {
+    color: #555555;
+    margin-top: 22px; /* Increased margin */
+    font-size: 2.5rem; /* Increased font size */
+}
+
+/* Flex container for forms */
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px; /* Increased margin */
+}
+
+/* Big box containing all forms */
+.big-box {
+    display: flex;
+    flex-wrap: nowrap; /* Ensures form boxes are side by side */
+    gap: 22px; /* Increased gap */
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+}
+
+/* Form box styling */
+.form-box {
+    flex: 1 1 auto; /* Allows flexibility */
+    min-width: 250px; /* Ensures a minimum width */
+    padding: 22px; /* Increased padding */
+    background-color: #f9f9f9;
+    border: 1px solid #dddddd;
+    border-radius: 8px; /* Increased border radius */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Increased shadow */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 16px; /* Increased margin */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin */
+    font-weight: bold;
+    font-size: 1.5rem; /* Increased font size */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px; /* Increased padding */
+    font-size: 1.5rem; /* Increased font size */
+    border: 1px solid #cccccc;
+    border-radius: 4px; /* Increased border radius */
+}
+
+.form-group button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 22px; /* Increased padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem; /* Increased font size */
+    border-radius: 4px; /* Increased border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styling */
+.error-message {
+    width: 80%; /* Set the width to a smaller size */
+    max-width: 400px; /* Maximum width for larger screens */
+    margin: 20px auto; /* Center align the message */
+    padding: 10px; /* Increased padding */
+    background-color: #ffffff; /* Changed to white background */
+    color: #bc1a17; /* Error text color */
+    border: 1px solid #000000; /* Border color */
+    border-radius: 8px; /* Increased border radius */
+    text-align: center;
+    font-size: 1.4rem; /* Adjusted font size */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+/* Ensure all buttons have consistent styling */
+button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 12px; /* Adjust padding as needed */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 8%; /* Ensure button takes full width */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .big-box {
+        flex-wrap: wrap; /* Wrap form boxes on smaller screens */
+    }
+
+    .error-message {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}

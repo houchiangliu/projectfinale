@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Dashboard</title>
+    <link rel="stylesheet" href="/static/dash.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Add Changes</h1>
+        <button onclick="window.location.href='/'">Back</button>
+        
+        <!-- Error Message Section -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="error-message">
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <div class="form-container">
+            <div class="big-box">
+                <!-- Orders Form Box -->
+                <div class="form-box">
+                    <h2>Orders</h2>
+                    <form id="order-form" action="{{ url_for('Orders_Table') }}" method="POST">
+                        <div class="form-group">
+                            <label for="Product_id">Product ID:</label>
+                            <input type="number" id="Product_id" name="Product_id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Quantity">Quantity:</label>
+                            <input type="number" id="Quantity" name="Quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Date">Date:</label>
+                            <input type="date" id="Date" name="Date" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Submit Order</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Stock Movement Form Box -->
+                <div class="form-box">
+                    <h2>Stock Movement</h2>
+                    <form id="movement-form" action="{{ url_for('Stockmovement') }}" method="POST">
+                        <div class="form-group">
+                            <label for="Product_id">Product ID:</label>
+                            <input type="number" id="Product_id" name="Product_id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Movement_date">Movement Date:</label>
+                            <input type="date" id="Movement_date" name="Movement_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Quantity_changed">Quantity Changed:</label>
+                            <input type="number" id="Quantity_changed" name="Quantity_changed" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Reason">Reason:</label>
+                            <select id="Reason" name="Reason" required>
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="Sale">Sale</option>
+                                <option value="Restock">Restock</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Submit Movement</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Product Table Form Box -->
+                <div class="form-box">
+                    <h2>Product Table</h2>
+                    <form id="product-form" action="{{ url_for('Product_Table') }}" method="POST">
+                        <div class="form-group">
+                            <label for="Product_id">Product ID:</label>
+                            <input type="number" id="Product_id" name="Product_id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Product_name">Product Name:</label>
+                            <input type="text" id="Product_name" name="Product_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Product_category">Product Category:</label>
+                            <input type="text" id="Product_category" name="Product_category" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Supplier_id">Supplier ID:</label>
+                            <input type="number" id="Supplier_id" name="Supplier_id" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Submit Product</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Supplier Table Form Box -->
+                <div class="form-box">
+                    <h2>Supplier Table</h2>
+                    <form id="supplier-form" action="{{ url_for('Supplier_Table') }}" method="POST" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="Supplier_id">Supplier ID:</label>
+                            <input type="number" id="Supplier_id" name="Supplier_id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Supplier_name">Supplier Name:</label>
+                            <input type="text" id="Supplier_name" name="Supplier_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Location">Location:</label>
+                            <input type="text" id="Location" name="Location" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Submit Supplier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

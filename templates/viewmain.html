@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Basic styling for demonstration */
+        body {
+    font-family: Arial, sans-serif; /* Optional: Specify your preferred font */
+    background-color: #f0f0f0; /* Optional: Background color for the entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+ 
+.container {
+    max-width: 600px; /* Adjust the max-width as per your design */
+    background-color: #ffffff; /* Optional: Background color for the container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Box shadow for a slight elevation effect */
+    display: flex; /* Display children (header) as flex */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items horizontally */
+}
+ 
+header {
+    text-align: center;
+    width: 100%; /* Ensure header takes full width of container */
+}
+ 
+/* Style buttons */
+button {
+    display: inline-block;
+    width: 250px; /* Fixed width for each button */
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff; /* Blue color for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline style for buttons */
+    text-align: center;
+}
+ 
+button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+ 
+h1 {
+    margin-top: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>View Dashboard</h1>
+            <button onclick="window.location.href='/View_Inventory_Table'">Inventory by Product ID</button>
+            <button onclick="window.location.href='/View_Inventory_Table_All'">Show all Inventory</button>
+            <button onclick="window.location.href='/View_Supplier_Table'">Supplier</button>
+            <button onclick="window.location.href='/View_Product_Table'">Product</button>
+            <button onclick="window.location.href='/View_Orders_Table'">Orders</button>
+            <button onclick="window.location.href='/View_Stock_Movement'">Stock Movement</button>
+            <button onclick="window.location.href='/'">Back</button>
+        </header>
+    </div>
+</body>
+</html>
